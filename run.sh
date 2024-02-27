@@ -24,5 +24,5 @@ docker container run \
     --name shibboleth-sp \
     --hostname shibboleth-sp \
     -p $PORT_HTTP:80 -p $PORT_HTTPS:443 \
-    shibboleth-sp
+    ghcr.io/ambravo/shibboleth-sp:latest
 
