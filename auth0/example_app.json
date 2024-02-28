@@ -1,0 +1,77 @@
+{
+    "tenant": "amba-shibboleth",
+    "global": false,
+    "is_token_endpoint_ip_header_trusted": false,
+    "name": "shibboleth-sp",
+    "is_first_party": true,
+    "oidc_conformant": true,
+    "sso_disabled": false,
+    "cross_origin_auth": false,
+    "refresh_token": {
+        "expiration_type": "non-expiring",
+        "leeway": 0,
+        "infinite_token_lifetime": true,
+        "infinite_idle_token_lifetime": true,
+        "token_lifetime": 31557600,
+        "idle_token_lifetime": 2592000,
+        "rotation_type": "non-rotating"
+    },
+    "allowed_clients": [],
+    "callbacks": [
+        "https://shibboleth-sp.a0.gg/Shibboleth.sso/SAML2/POST",
+        "https://localhost/Shibboleth.sso/SAML2/POST"
+    ],
+    "native_social_login": {
+        "apple": {
+            "enabled": false
+        },
+        "facebook": {
+            "enabled": false
+        }
+    },
+    "addons": {
+        "samlp": {
+            "audience": "shibboleth-sp",
+            "recipient": "https://shibboleth-sp.a0.gg/Shibboleth.sso/SAML2/POST",
+            "mappings": {
+                "user_id": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+                "email": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+                "given_name": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
+                "family_name": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname",
+                "nickname": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+            },
+            "createUpnClaim": false,
+            "passthroughClaimsWithNoMapping": true,
+            "mapIdentities": false,
+            "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
+        }
+    },
+    "allowed_logout_urls": [
+        "https://shibboleth-sp.a0.gg",
+        "https://localhost"
+    ],
+    "signing_keys": [
+        {
+            "cert": "-----BEGIN CERTIFICATE-----\r\nMIIDEzCCAfugAwIBAgIJROsqZNi275btMA0GCSqGSIb3DQEBCwUAMCcxJTAjBgNV\r\nBAMTHGFtYmEtc2hpYmJvbGV0aC51ay5hdXRoMC5jb20wHhcNMjQwMjI4MTMwMTUy\r\nWhcNMzcxMTA2MTMwMTUyWjAnMSUwIwYDVQQDExxhbWJhLXNoaWJib2xldGgudWsu\r\nYXV0aDAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqVDzzzDE\r\ndL0bIqWOvq9DJRGGpYJBPi7sFeugp4cyLHDJ0r2QoqD9f5LbpeifODujNT+B66q5\r\nX2ZUPE13uiPq3f8+NB+fP/RLQ2nDa8nlMu6EsXkya90AU4G0TKfndkTjDqXYJbyM\r\n72iipJgkksYcud9aPjDmNmLuTqjvZjViO/RWpXudQBY2cpwcxh/zlprm6egbQzGK\r\ni+SAWq55ihiphXRXUDnCqA82E3ZxUg8zpBnaInr1/ERn995wjr8EkRwwagTy8wK3\r\nsl0baHfAe/MgBSw57EKYZ8NOo+Ay6t4or6nGzUdBgXXLnOeNSMANT5jXyFhtYfcr\r\nuwyOip2I2+7z5wIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBSJ\r\nzaeaaQcArHPXwxDnWMTIGH5+JTAOBgNVHQ8BAf8EBAMCAoQwDQYJKoZIhvcNAQEL\r\nBQADggEBADMeKv7i0V00NLjDRLraUjbgKyely+BsYobBUvKTglKx30ICNGuqWxNa\r\nncJUXD3U7QZZUEtibLtYAcMyEmOtiqgcpw09mesj19Zh3Z9FxcseH9xpV7AZzr/g\r\ngivdv5DAM+hc9hxBIKdpiiFFfXIeGAmmS/ki/4E7/qPE0c+2yM+eZ3LNsEcF4eUo\r\nAUAkWNdLdEYWE5QgrHcdTw9vckx0rq5IZYuv//q+di3ocA0QKZwjqkbR3BasTy1K\r\nWy9iGcc2ekYpF+bYjvFoRuphZ9pbfXWK8PMgWamRDnM1ujFiP8M7gR2R7Tvfgp0f\r\nWAgCkikGWZQkHNNVdyGPhsERLJRYO14=\r\n-----END CERTIFICATE-----",
+            "pkcs7": "-----BEGIN PKCS7-----\r\nMIIDQgYJKoZIhvcNAQcCoIIDMzCCAy8CAQExADALBgkqhkiG9w0BBwGgggMXMIID\r\nEzCCAfugAwIBAgIJROsqZNi275btMA0GCSqGSIb3DQEBCwUAMCcxJTAjBgNVBAMT\r\nHGFtYmEtc2hpYmJvbGV0aC51ay5hdXRoMC5jb20wHhcNMjQwMjI4MTMwMTUyWhcN\r\nMzcxMTA2MTMwMTUyWjAnMSUwIwYDVQQDExxhbWJhLXNoaWJib2xldGgudWsuYXV0\r\naDAuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqVDzzzDEdL0b\r\nIqWOvq9DJRGGpYJBPi7sFeugp4cyLHDJ0r2QoqD9f5LbpeifODujNT+B66q5X2ZU\r\nPE13uiPq3f8+NB+fP/RLQ2nDa8nlMu6EsXkya90AU4G0TKfndkTjDqXYJbyM72ii\r\npJgkksYcud9aPjDmNmLuTqjvZjViO/RWpXudQBY2cpwcxh/zlprm6egbQzGKi+SA\r\nWq55ihiphXRXUDnCqA82E3ZxUg8zpBnaInr1/ERn995wjr8EkRwwagTy8wK3sl0b\r\naHfAe/MgBSw57EKYZ8NOo+Ay6t4or6nGzUdBgXXLnOeNSMANT5jXyFhtYfcruwyO\r\nip2I2+7z5wIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBSJzaea\r\naQcArHPXwxDnWMTIGH5+JTAOBgNVHQ8BAf8EBAMCAoQwDQYJKoZIhvcNAQELBQAD\r\nggEBADMeKv7i0V00NLjDRLraUjbgKyely+BsYobBUvKTglKx30ICNGuqWxNancJU\r\nXD3U7QZZUEtibLtYAcMyEmOtiqgcpw09mesj19Zh3Z9FxcseH9xpV7AZzr/ggivd\r\nv5DAM+hc9hxBIKdpiiFFfXIeGAmmS/ki/4E7/qPE0c+2yM+eZ3LNsEcF4eUoAUAk\r\nWNdLdEYWE5QgrHcdTw9vckx0rq5IZYuv//q+di3ocA0QKZwjqkbR3BasTy1KWy9i\r\nGcc2ekYpF+bYjvFoRuphZ9pbfXWK8PMgWamRDnM1ujFiP8M7gR2R7Tvfgp0fWAgC\r\nkikGWZQkHNNVdyGPhsERLJRYO14xAA==\r\n-----END PKCS7-----\r\n",
+            "subject": "deprecated"
+        }
+    ],
+    "client_id": "EEroQVFfUBiQa6JOy7VUJu71wkIndchR",
+    "callback_url_template": false,
+    "jwt_configuration": {
+        "alg": "RS256",
+        "lifetime_in_seconds": 36000,
+        "secret_encoded": false
+    },
+    "client_aliases": [],
+    "token_endpoint_auth_method": "client_secret_post",
+    "app_type": "regular_web",
+    "grant_types": [
+        "authorization_code",
+        "implicit",
+        "refresh_token",
+        "client_credentials"
+    ],
+    "custom_login_page_on": true
+}
